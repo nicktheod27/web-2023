@@ -1,0 +1,143 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 2rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.register {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+  }
+  
+  .register__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .register__form {
+    position: relative;
+    margin-inline: 1.5rem;
+    background-color: hsla(0, 0%, 100%, .01);
+    border: 2px solid hsla(0, 0%, 100%, .7);
+    padding: 2.5rem 1rem;
+    color: var(--white-color);
+    border-radius: 1rem;
+    backdrop-filter: blur(16px);
+  }
+  
+  .register__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: 1.25rem;
+  }
+  
+  .register__inputs, 
+  .register__box {
+    display: grid;
+  }
+  
+  .register__inputs {
+    row-gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .register__box {
+    grid-template-columns: 1fr max-content;
+    column-gap: .75rem;
+    align-items: center;
+    border: 2px solid hsla(0, 0%, 100%, .7);
+    padding-inline: 1.25rem;
+    border-radius: 4rem;
+  }
+  
+  .register__input, 
+  .register__button {
+    border: none;
+    outline: none;
+  }
+  
+  .register__input {
+    width: 100%;
+    background: none;
+    color: var(--white-color);
+    padding-block: 1rem;
+  }
+  
+  .register__input::placeholder {
+    color: var(--white-color);
+  }
+  
+  .register__box i {
+    font-size: 1.25rem;
+  }
+  
+  
+  .register__button {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--white-color);
+    border-radius: 4rem;
+    color: var(--black-color);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For medium devices */
+  @media screen and (min-width: 576px) {
+    .register {
+      justify-content: center;
+    }
+    .register__form {
+      width: 420px;
+      padding-inline: 2.5rem;
+    }
+    .register__title {
+      margin-bottom: 2rem;
+    }
+  }
