@@ -40,12 +40,4 @@ document.addEventListener("DOMContentLoaded",function(){
             alert('Passwords do not match');
             e.preventDefault();
         }
-            //formdata
-        const formData = {
-            name: name_input.value.trim(),
-            email: email_input.value.trim(),
-            password: password_input1.value.trim(),
-        };
-        sendData(formData);
-
     });
