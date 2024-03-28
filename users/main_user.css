@@ -1,73 +1,116 @@
 body,html{
- margin:0;
- padding:0;
- width:100%;
- height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    }
+   
+     .sidebar {
+       height: 100%;
+       width: 250px;
+       position: absolute;
+       top: 0;
+       left: -250px; /* initially hidden */
+       background-color: #333;
+       padding-top: 20px;
+       z-index: 1000; /* ensure sidebar appears above map */
+       transition: left 0.3s; /* add transition for smooth sliding animation */
+   }
+   
+   .open-sidebar {
+       left: 0; /* visible position */
+   }
+   
+   .sidebar h2 {
+       color: #fff;
+       text-align: center;
+   }
+   
+   .sidebar nav ul {
+       list-style-type: none;
+       padding: 0;
+       margin: 0;
+   }
+   
+   .sidebar nav ul li {
+       padding: 10px;
+       text-align: center;
+   }
+   
+   .sidebar nav ul li a {
+       color: #fff;
+       text-decoration: none;
+       display: block;
+       transition: 0.3s;
+   }
+   
+   .sidebar nav ul li a:hover {
+       background-color: #555;
+   }
+   .toggle-btn {
+       position: fixed;
+       top: 80px;
+       background-color: #333;
+       color: #fff;
+       border: none;
+       padding: 10px 10px;
+       cursor: pointer;
+       z-index: 1001; /* Ensure button appears above sidebar */
+   }
+   
+   .toggle-btn:hover {
+       background-color: #555;
+   }
+   #map {
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       width: 100%;
+       height: 100%;
+     }
+
+     #popup-form {
+        display: none;
+        position: fixed;
+        top: 80%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      }
+    
+      /* Styling for form fields */
+      .container {
+        margin-bottom: 5px;
+      }
+    
+      label {
+        display: flex;
+        margin-bottom: 2px;
+      }
+    
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 2px;
+        border: 2px solid #ccc;
+        border-radius: 2px;
+      }
+    
+      /* Styling for submit button */
+      #submit-button {
+        background-color: #000;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
 }
 
-  .sidebar {
-    height: 100%;
-    width: 250px;
-    position: absolute;
-    top: 0;
-    left: -250px; /* initially hidden */
-    background-color: #333;
-    padding-top: 20px;
-    z-index: 1000; /* ensure sidebar appears above map */
-    transition: left 0.3s; /* add transition for smooth sliding animation */
-}
-
-.open-sidebar {
-    left: 0; /* visible position */
-}
-
-.sidebar h2 {
-    color: #fff;
-    text-align: center;
-}
-
-.sidebar nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar nav ul li {
-    padding: 10px;
-    text-align: center;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #555;
-}
-.toggle-btn {
-    position: fixed;
-    top: 80px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 10px;
-    cursor: pointer;
-    z-index: 1001; /* Ensure button appears above sidebar */
-}
-
-.toggle-btn:hover {
-    background-color: #555;
-}
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    height: calc(100% - 40px);
-  }
+     
