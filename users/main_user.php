@@ -21,12 +21,37 @@
             <li><a href="#" id="requests-link"><i class="fas fa-hand-holding"></i> Requests</a></li>
             <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
             <li><a href="#"><i class="fas fa-life-ring"></i> Help & Support</a></li>
-            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="" id="logout-form"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </nav>
     </div>
     <button class="toggle-btn"><i class="fas fa-bars"></i></button>
     <div id="map"></div>
+
+
+<div id="popup-form" style="display: none;">
+  <form>
+    <!-- Add your form fields here -->
+    <div class="container">
+     <label for="item">Item</label>
+      <input type="text" id="item" name="item" autocomplete="off" required>
+      </div>
+      <div class="container">
+      <label>People</label>
+      <input type="number" id="quantity" name="quantity" min="1" autocomplete="off" required>
+      </div>
+      <div class="container">
+      <label for="latitude">Latitude:</label>
+      <input type="text" id="latitude" name="latitude" autocomplete="off" required>
+      </div>
+      <div class="container">
+      <label for="longitude">Longitude:</label>
+      <input type="text" id="longitude" name="longitude" autocomplete="off" required>
+      </div>
+    <!-- Add more fields as needed -->
+    <button type="submit" name="signup-submit" id="submit-button">Register</button>
+  </form>
+</div>
  
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="main_user.js"></script>
