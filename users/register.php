@@ -13,8 +13,9 @@
 </head>
 <body>
     <div class="register">
+    <img src="reg-bg.jpg" alt="image" class="register__bg">
     <?php 
-include("php/config.php");
+    include "config.php";
 
 // Function to safely output JavaScript alerts
 function js_alert($message) {
@@ -49,7 +50,6 @@ if(isset($_GET['success']) && $_GET['success'] === 'registration_successful') {
     js_alert("Registration Successful!");
 }
 ?>
-        <img src="reg.png" alt="image" class="register__bg">
         <form action="" class="register__form" method="post">
             <h1 class="register__title">Register</h1>
 
