@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaflet Map with Popups</title>
+  <head>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
@@ -16,11 +17,11 @@
         <nav>
             <ul>
                 <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
-            <li><a href="#"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="announcements.php"><i class="fas fa-bullhorn"></i> Announcements</a></li>
             <li><a href="#" id="requests-link"><i class="fas fa-hand-holding"></i> Requests</a></li>
-            <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="offer.php"><i class="fas fa-bell"></i> Offers</a></li>
             <li><a href="#"><i class="fas fa-life-ring"></i> Help & Support</a></li>
-            <li><a href="" id="logout-form"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="#" id="logout-form"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </nav>
     </div>
@@ -51,6 +52,11 @@
     <button type="submit" name="signup-submit" id="submit-button">Register</button>
   </form>
 </div>
+ 
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="main_user.js"></script>
+</body>
+</html>
  
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="main_user.js"></script>
