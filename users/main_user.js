@@ -7,83 +7,41 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker = L.marker([38.2463673403233, 21.735140649945635]).addTo(map);
-
 marker.bindPopup("St. George Square").openPopup();
 
-map.on('click', function(e){
+map.on('click', function(e) {
   var coords = e.latlng;
-  var latt= coords.lat.toFixed(6);
+  var latt = coords.lat.toFixed(6);
   var lngg = coords.lng.toFixed(6);
-  // Update the input field with the formatted latitude
   document.getElementById('latitude').value = latt;
-  // Update the input field with the formatted longitude
   document.getElementById('longitude').value = lngg;
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.querySelector('.toggle-btn');
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleBtn = document.querySelector('.toggle-btn');
-
-    toggleBtn.addEventListener('click', function() {
-        sidebar.classList.toggle('open-sidebar');
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-document.getElementById('requests-link').addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent default link behavior
-  document.getElementById('popup-form').style.display = 'block'; // Display the popup form
+  toggleBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('open-sidebar');
   });
-});
-
-//====================================//
-/*
-fetch('includes/Items.json')
-.then(response =>{
-  if(!response.ok){
-    throw new Error("Error fetching json Data");
-  }
-  return response.json();
-})
-
-.then(jsonData => {
-  console.log(jsonData);
-  const data = jsonData.map(item => item.name);
-  console.log(data);
   
-  const autocomplete_limit=5;
-})
+  document.getElementById('requests-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    document.getElementById('popup-form').style.display = 'block'; // Display the popup form
+  });
 
-.catch(error=>{
-  console.log("Error Fetching the JSON data", error_message);
-})*/
+  document.getElementById('logout-form').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
 
-
-document.getElementById('logout-form').addEventListener('click', function (event) {
-  event.preventDefault();
-
-  fetch('includes/logout.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error logging out.');
-      }
-      return response.json();
-    })
-    .then(response => {
-      console.log(response);
-      if (response.success) {
-        // Redirect 
-        window.location.href = response.redirect;
-      }
-    })
-    .catch(error => {
-      console.error('Error logging out:', error.message);
-    });
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open('POST', '../includes/logout.php', true);
+    xhr1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr1.onreadystatechange = function() {
+        if (xhr1.readyState === XMLHttpRequest.DONE && xhr1.status === 200) {
+            // Assuming a successful logout, redirect the user to the login page or home page
+            window.location.href = 'login.php'; // Change this to your login or home page
+        }
+    };
+    xhr1.send('logout=true');
+});
 });
