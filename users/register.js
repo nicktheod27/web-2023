@@ -14,11 +14,11 @@ togglePasswordIcons.forEach(icon => {
 
 const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     // regex of password: at least 8 letters, 1 uppercase, 1 number:
-const password_regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+const password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
 
 document.addEventListener("DOMContentLoaded",function(){
     const registerButton = document.getElementById("register_button");
-    const name_input = document.getElementById("name");
+    const name_input = document.getElementById("username");
     const email_input = document.getElementById("email_input");
     const password_input1 = document.getElementById("password");
     const password_input2 = document.getElementById("password-repeat");
@@ -36,8 +36,25 @@ document.addEventListener("DOMContentLoaded",function(){
             return;
         }
         //if password and repeat-password don't match alert user
-        if(password_input1.value !== password_input2.value){
+        if(password_input1.value.trim() !== password_input2.value.trim()){
             alert('Passwords do not match');
-            e.preventDefault();
+            password_input1.value = "";
+            password_input2.value = "";
+            return;
         }
+        if(password_input1.value.length < 8){
+            alert("Password must be longer than 8 character");
+        }
+        if(!password_regex.test(password_input1.value.trim())){
+            alert("Password must have at least one lower case , one upper case and one special character");
+
+            password_input1.value = "";
+            password_input2.value = "";
+            return;
+        }
+
+
+       
+
     });
+});
