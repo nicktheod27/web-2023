@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="login">
-        <img src="reg.png" alt="image" class="login__bg">
+        <img src="reg-bg.jpg" alt="image" class="login__bg">
         <?php 
-        include("php/config.php");
+        include "config.php";
         if(isset($_POST['submit'])){
             $email = mysqli_real_escape_string($conn,$_POST['email']);
             $password = mysqli_real_escape_string($conn,$_POST['password']);
