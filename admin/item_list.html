@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="item_list.css" />
+    <title>Test</title>
+</head>
+<body>
+
+
+<div id="main-box"> 
+    <div id="top-box"> 
+        Item List
+
+    </div>
+    <div class="dropdown show">
+        <button class="btn btn-secondary main-cat" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="box-shadow: none;">
+            Category: Medical supplies
+        </button>
+        <div class="dropdown-menu catdrop" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item cat-item" href="#">Warmth</a>
+            <a class="dropdown-item cat-item" href="#">Devices</a>
+            <a class="dropdown-item cat-item" href="#">Consumables</a>
+        </div>
+    </div>
+
+
+    <div class="subTitles">
+        <span>Item</span>
+        <span>Quantity</span>
+    </div>
+
+    <ul id="list">
+        <li id="item">
+            <span> Depon</span>
+            <span> 50</span>
+        </li>
+        <li id="item">
+            <span> Coffee</span>
+            <span> 20</span>
+        </li>
+        <li id="item">
+            <span> Potion of healing small </span>
+            <span> 100</span>
+        </li>
+        <li id="item">
+            <span> Potion of healing medium</span>
+            <span> 69</span>
+        </li>
+        <li id="item">
+            <span> Potion of healing big</span>
+            <span> 5</span>
+        </li>
+        <li id="item">
+            <span> Med kit</span>
+            <span> 100</span>
+        </li>
+        <li id="item">
+            <span> Bandages </span>
+            <span> 100</span>
+        </li>
+    </ul>    
+
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Edit Items button on the left -->
+                <button class="btn btn-success" style="box-shadow: none;">Edit Items</button>
+            </div>
+            <div class="col-md-4 text-center">
+                <!-- Delete Items button in the middle -->
+                <button class="btn btn-danger" style="box-shadow: none;">Delete Items</button>
+            </div>
+            <div class="col-md-4 text-right">
+                <!-- Category dropdown button on the right -->
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="categoryDropdown" style="box-shadow: none;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Insert Items
+                    </button>
+                    <div class="dropdown-menu insertdrop bot-cat" aria-labelledby="categoryDropdown">
+                        <!-- Dropdown items go here -->
+                        <a class="dropdown-item cat-item" href="#">Add item manually</a>
+                        <a class="dropdown-item cat-item" href="#">Upload a json file</a>
+                        <a class="dropdown-item cat-item" href="#">Use a magic spell</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
